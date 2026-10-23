@@ -288,6 +288,7 @@
             styles: [style_Ruas_3_0,style_Ruas_3_1,]
         });
         bounds_group.addLayer(layer_Ruas_3);
+        map.addLayer(layer_Ruas_3);
         function pop_Edificaes_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -355,7 +356,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(145,82,45,0.0)',
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_Edificaes_4');
@@ -363,7 +364,7 @@
         map.getPane('pane_Edificaes_4').style['mix-blend-mode'] = 'normal';
         var layer_Edificaes_4 = new L.geoJson(json_Edificaes_4, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_Edificaes_4',
             layerName: 'layer_Edificaes_4',
             pane: 'pane_Edificaes_4',
@@ -371,7 +372,6 @@
             style: style_Edificaes_4_0,
         });
         bounds_group.addLayer(layer_Edificaes_4);
-        map.addLayer(layer_Edificaes_4);
         function pop_Comunidade_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
