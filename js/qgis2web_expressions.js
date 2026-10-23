@@ -757,20 +757,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_label_Comunidade_4_eval_expression(context) {
-    // 'Comunidade ' || nm_fcu
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return ('Comunidade ' + feature.properties['nm_fcu'] );
-    } else {
-        return ('Comunidade ' + feature['nm_fcu'] );
-    }
-}
-
-
-function exp_label_Ruas_5_eval_expression(context) {
+function exp_label_Ruas_3_eval_expression(context) {
     // nome_compl
 
     var feature = context.feature;
@@ -783,7 +770,7 @@ function exp_label_Ruas_5_eval_expression(context) {
 }
 
 
-function exp_label_Comunidade_4_eval_expression(context) {
+function exp_label_Comunidade_5_eval_expression(context) {
     // 'Comunidade ' || nm_fcu
 
     var feature = context.feature;
@@ -796,7 +783,7 @@ function exp_label_Comunidade_4_eval_expression(context) {
 }
 
 
-function exp_label_Ruas_5_eval_expression(context) {
+function exp_label_Ruas_3_eval_expression(context) {
     // nome_compl
 
     var feature = context.feature;
@@ -805,5 +792,18 @@ function exp_label_Ruas_5_eval_expression(context) {
         return feature.properties['nome_compl'] ;
     } else {
         return feature['nome_compl'] ;
+    }
+}
+
+
+function exp_label_Comunidade_5_eval_expression(context) {
+    // 'Comunidade ' || nm_fcu
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ('Comunidade ' + feature.properties['nm_fcu'] );
+    } else {
+        return ('Comunidade ' + feature['nm_fcu'] );
     }
 }
