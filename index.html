@@ -47,12 +47,12 @@
         <script src="data/Ruas_3.js"></script>
         <script src="data/Edificaes_4.js"></script>
         <script src="data/Comunidade_5.js"></script>
-        <script src="data/Setoresdecampo_6.js"></script>
+        <script src="data/Setordecampo_6.js"></script>
         <script src="data/Pontosdeapoio_7.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:26, minZoom:10
-        }).fitBounds([[-22.937850801787654,-43.12936965367612],[-22.925082843897535,-43.1042838902575]]);
+        }).fitBounds([[-22.92910485585596,-43.1222894512898],[-22.925710960944663,-43.1163053439726]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -435,7 +435,7 @@
         });
         bounds_group.addLayer(layer_Comunidade_5);
         map.addLayer(layer_Comunidade_5);
-        function pop_Setoresdecampo_6(feature, layer) {
+        function pop_Setordecampo_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -455,9 +455,6 @@
                     <tr>\
                         <td colspan="2">' + (feature.properties['setor'] !== null ? autolinker.link(String(feature.properties['setor']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['estim_dom'] !== null ? autolinker.link(String(feature.properties['estim_dom']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -466,9 +463,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Setoresdecampo_6_0() {
+        function style_Setordecampo_6_0() {
             return {
-                pane: 'pane_Setoresdecampo_6',
+                pane: 'pane_Setordecampo_6',
                 opacity: 1,
                 color: 'rgba(255,247,29,1.0)',
                 dashArray: '',
@@ -481,20 +478,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Setoresdecampo_6');
-        map.getPane('pane_Setoresdecampo_6').style.zIndex = 406;
-        map.getPane('pane_Setoresdecampo_6').style['mix-blend-mode'] = 'normal';
-        var layer_Setoresdecampo_6 = new L.geoJson(json_Setoresdecampo_6, {
+        map.createPane('pane_Setordecampo_6');
+        map.getPane('pane_Setordecampo_6').style.zIndex = 406;
+        map.getPane('pane_Setordecampo_6').style['mix-blend-mode'] = 'normal';
+        var layer_Setordecampo_6 = new L.geoJson(json_Setordecampo_6, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Setoresdecampo_6',
-            layerName: 'layer_Setoresdecampo_6',
-            pane: 'pane_Setoresdecampo_6',
-            onEachFeature: pop_Setoresdecampo_6,
-            style: style_Setoresdecampo_6_0,
+            dataVar: 'json_Setordecampo_6',
+            layerName: 'layer_Setordecampo_6',
+            pane: 'pane_Setordecampo_6',
+            onEachFeature: pop_Setordecampo_6,
+            style: style_Setordecampo_6_0,
         });
-        bounds_group.addLayer(layer_Setoresdecampo_6);
-        map.addLayer(layer_Setoresdecampo_6);
+        bounds_group.addLayer(layer_Setordecampo_6);
+        map.addLayer(layer_Setordecampo_6);
         function pop_Pontosdeapoio_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -604,7 +601,7 @@
         });
         var overlaysTree = [
             {label: '<img src="legend/Pontosdeapoio_7.png" /> Pontos de apoio', layer: layer_Pontosdeapoio_7},
-            {label: '<img src="legend/Setoresdecampo_6.png" /> Setores de campo', layer: layer_Setoresdecampo_6},
+            {label: '<img src="legend/Setordecampo_6.png" /> Setor de campo', layer: layer_Setordecampo_6},
             {label: '<img src="legend/Comunidade_5.png" /> Comunidade', layer: layer_Comunidade_5},
             {label: '<img src="legend/Edificaes_4.png" /> Edificações', layer: layer_Edificaes_4},
             {label: '<img src="legend/Ruas_3.png" /> Ruas', layer: layer_Ruas_3},
@@ -642,7 +639,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((exp_label_Comunidade_5_eval_expression(context) !== null?String('<div style="color: #ff8801; font-size: 10pt; font-family: \'Liberation Sans\', sans-serif;">' + exp_label_Comunidade_5_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Comunidade_5'});
+            layer.bindTooltip((exp_label_Comunidade_5_eval_expression(context) !== null?String('<div style="color: #ff8801; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + exp_label_Comunidade_5_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Comunidade_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -650,12 +647,12 @@
               i++;
         });
         var i = 0;
-        layer_Setoresdecampo_6.eachLayer(function(layer) {
+        layer_Setordecampo_6.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['setor'] !== null?String('<div style="color: #fff71d; font-size: 14pt; font-weight: bold; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['setor']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Setoresdecampo_6'});
+            layer.bindTooltip((layer.feature.properties['setor'] !== null?String('<div style="color: #fff71d; font-size: 14pt; font-weight: bold; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['setor']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Setordecampo_6'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -675,15 +672,15 @@
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setoresdecampo_6,layer_Pontosdeapoio_7]);
+        resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
         map.on("zoomend", function(){
-            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setoresdecampo_6,layer_Pontosdeapoio_7]);
+            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setoresdecampo_6,layer_Pontosdeapoio_7]);
+            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setoresdecampo_6,layer_Pontosdeapoio_7]);
+            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
         });
         </script>
     </body>
