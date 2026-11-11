@@ -24,7 +24,7 @@
                 width: 100%;
                 height: 100%;
             }
-        </style>
+	</style>
         <title></title>
     </head>
     <body>
@@ -44,15 +44,14 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Ruas_3.js"></script>
-        <script src="data/Edificaes_4.js"></script>
-        <script src="data/Comunidade_5.js"></script>
-        <script src="data/Setordecampo_6.js"></script>
-        <script src="data/Pontosdeapoio_7.js"></script>
+        <script src="data/Ruas_1.js"></script>
+        <script src="data/Comunidade_2.js"></script>
+        <script src="data/Setordecampo_3.js"></script>
+        <script src="data/Pontosdeapoio_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:26, minZoom:10
-        }).fitBounds([[-22.92910485585596,-43.1222894512898],[-22.925710960944663,-43.1163053439726]]);
+        }).fitBounds([[-22.93950988346651,-43.08286356401971],[-22.918054710207375,-43.050948324994586]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -145,10 +144,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_Mapa_0');
-        map.getPane('pane_Mapa_0').style.zIndex = 400;
-        var layer_Mapa_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-            pane: 'pane_Mapa_0',
+        map.createPane('pane_Imagemdesatlite_0');
+        map.getPane('pane_Imagemdesatlite_0').style.zIndex = 400;
+        var layer_Imagemdesatlite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_Imagemdesatlite_0',
             opacity: 1.0,
             attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
             minZoom: 10,
@@ -156,33 +155,9 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_Mapa_0;
-        map.createPane('pane_Imagemdesatlite_1');
-        map.getPane('pane_Imagemdesatlite_1').style.zIndex = 401;
-        var layer_Imagemdesatlite_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-            pane: 'pane_Imagemdesatlite_1',
-            opacity: 1.0,
-            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
-            minZoom: 10,
-            maxZoom: 26,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
-        });
-        layer_Imagemdesatlite_1;
-        map.addLayer(layer_Imagemdesatlite_1);
-        map.createPane('pane_Nomes_2');
-        map.getPane('pane_Nomes_2').style.zIndex = 402;
-        var layer_Nomes_2 = L.tileLayer('https://mt1.google.com/vt/lyrs=h&x={x}&y={y}&z={z}', {
-            pane: 'pane_Nomes_2',
-            opacity: 1.0,
-            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
-            minZoom: 10,
-            maxZoom: 26,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
-        });
-        layer_Nomes_2;
-        function pop_Ruas_3(feature, layer) {
+        layer_Imagemdesatlite_0;
+        map.addLayer(layer_Imagemdesatlite_0);
+        function pop_Ruas_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -249,9 +224,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Ruas_3_0() {
+        function style_Ruas_1_0() {
             return {
-                pane: 'pane_Ruas_3',
+                pane: 'pane_Ruas_1',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -262,9 +237,9 @@
                 interactive: false,
             }
         }
-        function style_Ruas_3_1() {
+        function style_Ruas_1_1() {
             return {
-                pane: 'pane_Ruas_3',
+                pane: 'pane_Ruas_1',
                 opacity: 1,
                 color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
@@ -275,21 +250,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Ruas_3');
-        map.getPane('pane_Ruas_3').style.zIndex = 403;
-        map.getPane('pane_Ruas_3').style['mix-blend-mode'] = 'normal';
-        var layer_Ruas_3 = new L.geoJson.multiStyle(json_Ruas_3, {
+        map.createPane('pane_Ruas_1');
+        map.getPane('pane_Ruas_1').style.zIndex = 401;
+        map.getPane('pane_Ruas_1').style['mix-blend-mode'] = 'normal';
+        var layer_Ruas_1 = new L.geoJson.multiStyle(json_Ruas_1, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Ruas_3',
-            layerName: 'layer_Ruas_3',
-            pane: 'pane_Ruas_3',
-            onEachFeature: pop_Ruas_3,
-            styles: [style_Ruas_3_0,style_Ruas_3_1,]
+            dataVar: 'json_Ruas_1',
+            layerName: 'layer_Ruas_1',
+            pane: 'pane_Ruas_1',
+            onEachFeature: pop_Ruas_1,
+            styles: [style_Ruas_1_0,style_Ruas_1_1,]
         });
-        bounds_group.addLayer(layer_Ruas_3);
-        map.addLayer(layer_Ruas_3);
-        function pop_Edificaes_4(feature, layer) {
+        bounds_group.addLayer(layer_Ruas_1);
+        map.addLayer(layer_Ruas_1);
+        function pop_Comunidade_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -298,37 +273,13 @@
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['db_altmax'] !== null ? autolinker.link(String(feature.properties['db_altmax']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['tx_siglareg'] !== null ? autolinker.link(String(feature.properties['tx_siglareg']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['db_altmed'] !== null ? autolinker.link(String(feature.properties['db_altmed']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['tx_usosolo'] !== null ? autolinker.link(String(feature.properties['tx_usosolo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['tx_npavimentos'] !== null ? autolinker.link(String(feature.properties['tx_npavimentos']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['db_area'] !== null ? autolinker.link(String(feature.properties['db_area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['tx_comunidade'] !== null ? autolinker.link(String(feature.properties['tx_comunidade']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['tx_bairro'] !== null ? autolinker.link(String(feature.properties['tx_bairro']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['tx_regiaoadm'] !== null ? autolinker.link(String(feature.properties['tx_regiaoadm']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['db_areaedif'] !== null ? autolinker.link(String(feature.properties['db_areaedif']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['db_GRmean'] !== null ? autolinker.link(String(feature.properties['db_GRmean']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['db_potencial'] !== null ? autolinker.link(String(feature.properties['db_potencial']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['db_potencialmed'] !== null ? autolinker.link(String(feature.properties['db_potencialmed']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Shape__Area'] !== null ? autolinker.link(String(feature.properties['Shape__Area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -344,71 +295,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Edificaes_4_0() {
+        function style_Comunidade_2_0() {
             return {
-                pane: 'pane_Edificaes_4',
-                opacity: 1,
-                color: 'rgba(255,136,1,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(145,82,45,0.0)',
-                interactive: false,
-            }
-        }
-        map.createPane('pane_Edificaes_4');
-        map.getPane('pane_Edificaes_4').style.zIndex = 404;
-        map.getPane('pane_Edificaes_4').style['mix-blend-mode'] = 'normal';
-        var layer_Edificaes_4 = new L.geoJson(json_Edificaes_4, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_Edificaes_4',
-            layerName: 'layer_Edificaes_4',
-            pane: 'pane_Edificaes_4',
-            onEachFeature: pop_Edificaes_4,
-            style: style_Edificaes_4_0,
-        });
-        bounds_group.addLayer(layer_Edificaes_4);
-        function pop_Comunidade_5(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cd_fcu'] !== null ? autolinker.link(String(feature.properties['cd_fcu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nm_fcu'] !== null ? autolinker.link(String(feature.properties['nm_fcu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cd_mun'] !== null ? autolinker.link(String(feature.properties['cd_mun']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nm_mun'] !== null ? autolinker.link(String(feature.properties['nm_mun']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Domicílio'] !== null ? autolinker.link(String(feature.properties['Domicílio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Pessoas'] !== null ? autolinker.link(String(feature.properties['Pessoas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['dom_sem_banheiro'] !== null ? autolinker.link(String(feature.properties['dom_sem_banheiro']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Comunidade_5_0() {
-            return {
-                pane: 'pane_Comunidade_5',
+                pane: 'pane_Comunidade_2',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -421,21 +310,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Comunidade_5');
-        map.getPane('pane_Comunidade_5').style.zIndex = 405;
-        map.getPane('pane_Comunidade_5').style['mix-blend-mode'] = 'normal';
-        var layer_Comunidade_5 = new L.geoJson(json_Comunidade_5, {
+        map.createPane('pane_Comunidade_2');
+        map.getPane('pane_Comunidade_2').style.zIndex = 402;
+        map.getPane('pane_Comunidade_2').style['mix-blend-mode'] = 'normal';
+        var layer_Comunidade_2 = new L.geoJson(json_Comunidade_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Comunidade_5',
-            layerName: 'layer_Comunidade_5',
-            pane: 'pane_Comunidade_5',
-            onEachFeature: pop_Comunidade_5,
-            style: style_Comunidade_5_0,
+            dataVar: 'json_Comunidade_2',
+            layerName: 'layer_Comunidade_2',
+            pane: 'pane_Comunidade_2',
+            onEachFeature: pop_Comunidade_2,
+            style: style_Comunidade_2_0,
         });
-        bounds_group.addLayer(layer_Comunidade_5);
-        map.addLayer(layer_Comunidade_5);
-        function pop_Setordecampo_6(feature, layer) {
+        bounds_group.addLayer(layer_Comunidade_2);
+        map.addLayer(layer_Comunidade_2);
+        function pop_Setordecampo_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -455,6 +344,9 @@
                     <tr>\
                         <td colspan="2">' + (feature.properties['setor'] !== null ? autolinker.link(String(feature.properties['setor']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['estim_dom'] !== null ? autolinker.link(String(feature.properties['estim_dom']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -463,9 +355,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Setordecampo_6_0() {
+        function style_Setordecampo_3_0() {
             return {
-                pane: 'pane_Setordecampo_6',
+                pane: 'pane_Setordecampo_3',
                 opacity: 1,
                 color: 'rgba(255,247,29,1.0)',
                 dashArray: '',
@@ -478,21 +370,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Setordecampo_6');
-        map.getPane('pane_Setordecampo_6').style.zIndex = 406;
-        map.getPane('pane_Setordecampo_6').style['mix-blend-mode'] = 'normal';
-        var layer_Setordecampo_6 = new L.geoJson(json_Setordecampo_6, {
+        map.createPane('pane_Setordecampo_3');
+        map.getPane('pane_Setordecampo_3').style.zIndex = 403;
+        map.getPane('pane_Setordecampo_3').style['mix-blend-mode'] = 'normal';
+        var layer_Setordecampo_3 = new L.geoJson(json_Setordecampo_3, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Setordecampo_6',
-            layerName: 'layer_Setordecampo_6',
-            pane: 'pane_Setordecampo_6',
-            onEachFeature: pop_Setordecampo_6,
-            style: style_Setordecampo_6_0,
+            dataVar: 'json_Setordecampo_3',
+            layerName: 'layer_Setordecampo_3',
+            pane: 'pane_Setordecampo_3',
+            onEachFeature: pop_Setordecampo_3,
+            style: style_Setordecampo_3_0,
         });
-        bounds_group.addLayer(layer_Setordecampo_6);
-        map.addLayer(layer_Setordecampo_6);
-        function pop_Pontosdeapoio_7(feature, layer) {
+        bounds_group.addLayer(layer_Setordecampo_3);
+        map.addLayer(layer_Setordecampo_3);
+        function pop_Pontosdeapoio_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -514,38 +406,38 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Pontosdeapoio_7_0() {
+        function style_Pontosdeapoio_4_0() {
             return {
-                pane: 'pane_Pontosdeapoio_7',
+                pane: 'pane_Pontosdeapoio_4',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Pontosdeapoio_7.svg',
+            iconUrl: 'markers/Pontosdeapoio_4.svg',
             iconSize: [38.0, 38.0]
         }),
                 interactive: false,
             }
         }
-        map.createPane('pane_Pontosdeapoio_7');
-        map.getPane('pane_Pontosdeapoio_7').style.zIndex = 407;
-        map.getPane('pane_Pontosdeapoio_7').style['mix-blend-mode'] = 'normal';
-        var layer_Pontosdeapoio_7 = new L.geoJson(json_Pontosdeapoio_7, {
+        map.createPane('pane_Pontosdeapoio_4');
+        map.getPane('pane_Pontosdeapoio_4').style.zIndex = 404;
+        map.getPane('pane_Pontosdeapoio_4').style['mix-blend-mode'] = 'normal';
+        var layer_Pontosdeapoio_4 = new L.geoJson(json_Pontosdeapoio_4, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Pontosdeapoio_7',
-            layerName: 'layer_Pontosdeapoio_7',
-            pane: 'pane_Pontosdeapoio_7',
-            onEachFeature: pop_Pontosdeapoio_7,
+            dataVar: 'json_Pontosdeapoio_4',
+            layerName: 'layer_Pontosdeapoio_4',
+            pane: 'pane_Pontosdeapoio_4',
+            onEachFeature: pop_Pontosdeapoio_4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_Pontosdeapoio_7_0(feature));
+                return L.marker(latlng, style_Pontosdeapoio_4_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Pontosdeapoio_7);
-        map.addLayer(layer_Pontosdeapoio_7);
+        bounds_group.addLayer(layer_Pontosdeapoio_4);
+        map.addLayer(layer_Pontosdeapoio_4);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -600,15 +492,12 @@
             }
         });
         var overlaysTree = [
-            {label: '<img src="legend/Pontosdeapoio_7.png" /> Pontos de apoio', layer: layer_Pontosdeapoio_7},
-            {label: '<img src="legend/Setordecampo_6.png" /> Setor de campo', layer: layer_Setordecampo_6},
-            {label: '<img src="legend/Comunidade_5.png" /> Comunidade', layer: layer_Comunidade_5},
-            {label: '<img src="legend/Edificaes_4.png" /> Edificações', layer: layer_Edificaes_4},
-            {label: '<img src="legend/Ruas_3.png" /> Ruas', layer: layer_Ruas_3},
+            {label: '<img src="legend/Pontosdeapoio_4.png" /> Pontos de apoio', layer: layer_Pontosdeapoio_4},
+            {label: '<img src="legend/Setordecampo_3.png" /> Setor de campo', layer: layer_Setordecampo_3},
+            {label: '<img src="legend/Comunidade_2.png" /> Comunidade', layer: layer_Comunidade_2},
+            {label: '<img src="legend/Ruas_1.png" /> Ruas', layer: layer_Ruas_1},
         {label: '<b>Mapa base</b>',  selectAllCheckbox: true, children: [
-            {label: "Nomes", layer: layer_Nomes_2},
-            {label: "Imagem de satélite", layer: layer_Imagemdesatlite_1},
-            {label: "Mapa", layer: layer_Mapa_0},]},]
+            {label: "Imagem de satélite", layer: layer_Imagemdesatlite_0},]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -621,12 +510,12 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_Ruas_3.eachLayer(function(layer) {
+        layer_Ruas_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((exp_label_Ruas_3_eval_expression(context) !== null?String('<div style="color: #323232; font-size: 8pt; font-family: \'Roboto\', sans-serif;">' + exp_label_Ruas_3_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Ruas_3'});
+            layer.bindTooltip((exp_label_Ruas_1_eval_expression(context) !== null?String('<div style="color: #323232; font-size: 8pt; font-family: \'Roboto\', sans-serif;">' + exp_label_Ruas_1_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Ruas_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -634,12 +523,12 @@
               i++;
         });
         var i = 0;
-        layer_Comunidade_5.eachLayer(function(layer) {
+        layer_Comunidade_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((exp_label_Comunidade_5_eval_expression(context) !== null?String('<div style="color: #ff8801; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + exp_label_Comunidade_5_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Comunidade_5'});
+            layer.bindTooltip((exp_label_Comunidade_2_eval_expression(context) !== null?String('<div style="color: #ff8801; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + exp_label_Comunidade_2_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Comunidade_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -647,12 +536,12 @@
               i++;
         });
         var i = 0;
-        layer_Setordecampo_6.eachLayer(function(layer) {
+        layer_Setordecampo_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['setor'] !== null?String('<div style="color: #fff71d; font-size: 14pt; font-weight: bold; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['setor']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Setordecampo_6'});
+            layer.bindTooltip((layer.feature.properties['setor'] !== null?String('<div style="color: #fff71d; font-size: 14pt; font-weight: bold; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['setor']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Setordecampo_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -660,27 +549,27 @@
               i++;
         });
         var i = 0;
-        layer_Pontosdeapoio_7.eachLayer(function(layer) {
+        layer_Pontosdeapoio_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #d001ff; font-size: 9pt; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['nome']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Pontosdeapoio_7'});
+            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #d001ff; font-size: 9pt; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['nome']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Pontosdeapoio_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
+        resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
         map.on("zoomend", function(){
-            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
+            resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
+            resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Ruas_3,layer_Comunidade_5,layer_Setordecampo_6,layer_Pontosdeapoio_7]);
+            resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
         });
         </script>
     </body>
