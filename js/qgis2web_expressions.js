@@ -770,15 +770,15 @@ function exp_label_Ruas_1_eval_expression(context) {
 }
 
 
-function exp_label_Comunidade_2_eval_expression(context) {
-    // 'Comunidade ' || nm_fcu
+function exp_label_Comunidade_3_eval_expression(context) {
+    // 'Comunidade ' || tx_comunidade
 
     var feature = context.feature;
     
     if (feature.properties) {
-        return ('Comunidade ' + feature.properties['nm_fcu'] );
+        return ('Comunidade ' + feature.properties['tx_comunidade'] );
     } else {
-        return ('Comunidade ' + feature['nm_fcu'] );
+        return ('Comunidade ' + feature['tx_comunidade'] );
     }
 }
 
@@ -796,14 +796,14 @@ function exp_label_Ruas_1_eval_expression(context) {
 }
 
 
-function exp_label_Comunidade_2_eval_expression(context) {
-    // 'Comunidade ' || nm_fcu
+function exp_label_Comunidade_3_eval_expression(context) {
+    // 'Comunidade ' || tx_comunidade
 
     var feature = context.feature;
     
     if (feature.properties) {
-        return ('Comunidade ' + feature.properties['nm_fcu'] );
+        return ('Comunidade ' + feature.properties['tx_comunidade'] );
     } else {
-        return ('Comunidade ' + feature['nm_fcu'] );
+        return ('Comunidade ' + feature['tx_comunidade'] );
     }
 }

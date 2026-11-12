@@ -45,13 +45,14 @@
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="data/Ruas_1.js"></script>
-        <script src="data/Comunidade_2.js"></script>
-        <script src="data/Setordecampo_3.js"></script>
-        <script src="data/Pontosdeapoio_4.js"></script>
+        <script src="data/Edificaes_2.js"></script>
+        <script src="data/Comunidade_3.js"></script>
+        <script src="data/Setordecampo_4.js"></script>
+        <script src="data/Pontosdeapoio_5.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:26, minZoom:10
-        }).fitBounds([[-22.93950988346651,-43.08286356401971],[-22.918054710207375,-43.050948324994586]]);
+        }).fitBounds([[-22.930541398234812,-43.07118922231699],[-22.925562314457277,-43.06391602144059]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -264,7 +265,91 @@
         });
         bounds_group.addLayer(layer_Ruas_1);
         map.addLayer(layer_Ruas_1);
-        function pop_Comunidade_2(feature, layer) {
+        function pop_Edificaes_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_altmax'] !== null ? autolinker.link(String(feature.properties['db_altmax']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_altmed'] !== null ? autolinker.link(String(feature.properties['db_altmed']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tx_usosolo'] !== null ? autolinker.link(String(feature.properties['tx_usosolo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tx_npavimentos'] !== null ? autolinker.link(String(feature.properties['tx_npavimentos']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_area'] !== null ? autolinker.link(String(feature.properties['db_area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tx_bairro'] !== null ? autolinker.link(String(feature.properties['tx_bairro']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tx_regiaoadm'] !== null ? autolinker.link(String(feature.properties['tx_regiaoadm']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_areaedif'] !== null ? autolinker.link(String(feature.properties['db_areaedif']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_GRmean'] !== null ? autolinker.link(String(feature.properties['db_GRmean']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_potencial'] !== null ? autolinker.link(String(feature.properties['db_potencial']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['db_potencialmed'] !== null ? autolinker.link(String(feature.properties['db_potencialmed']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape__Area'] !== null ? autolinker.link(String(feature.properties['Shape__Area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape__Length'] !== null ? autolinker.link(String(feature.properties['Shape__Length']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Edificaes_2_0() {
+            return {
+                pane: 'pane_Edificaes_2',
+                opacity: 1,
+                color: 'rgba(255,136,1,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,0.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Edificaes_2');
+        map.getPane('pane_Edificaes_2').style.zIndex = 402;
+        map.getPane('pane_Edificaes_2').style['mix-blend-mode'] = 'normal';
+        var layer_Edificaes_2 = new L.geoJson(json_Edificaes_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Edificaes_2',
+            layerName: 'layer_Edificaes_2',
+            pane: 'pane_Edificaes_2',
+            onEachFeature: pop_Edificaes_2,
+            style: style_Edificaes_2_0,
+        });
+        bounds_group.addLayer(layer_Edificaes_2);
+        map.addLayer(layer_Edificaes_2);
+        function pop_Comunidade_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -295,9 +380,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Comunidade_2_0() {
+        function style_Comunidade_3_0() {
             return {
-                pane: 'pane_Comunidade_2',
+                pane: 'pane_Comunidade_3',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -310,21 +395,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Comunidade_2');
-        map.getPane('pane_Comunidade_2').style.zIndex = 402;
-        map.getPane('pane_Comunidade_2').style['mix-blend-mode'] = 'normal';
-        var layer_Comunidade_2 = new L.geoJson(json_Comunidade_2, {
+        map.createPane('pane_Comunidade_3');
+        map.getPane('pane_Comunidade_3').style.zIndex = 403;
+        map.getPane('pane_Comunidade_3').style['mix-blend-mode'] = 'normal';
+        var layer_Comunidade_3 = new L.geoJson(json_Comunidade_3, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Comunidade_2',
-            layerName: 'layer_Comunidade_2',
-            pane: 'pane_Comunidade_2',
-            onEachFeature: pop_Comunidade_2,
-            style: style_Comunidade_2_0,
+            dataVar: 'json_Comunidade_3',
+            layerName: 'layer_Comunidade_3',
+            pane: 'pane_Comunidade_3',
+            onEachFeature: pop_Comunidade_3,
+            style: style_Comunidade_3_0,
         });
-        bounds_group.addLayer(layer_Comunidade_2);
-        map.addLayer(layer_Comunidade_2);
-        function pop_Setordecampo_3(feature, layer) {
+        bounds_group.addLayer(layer_Comunidade_3);
+        map.addLayer(layer_Comunidade_3);
+        function pop_Setordecampo_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -355,9 +440,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Setordecampo_3_0() {
+        function style_Setordecampo_4_0() {
             return {
-                pane: 'pane_Setordecampo_3',
+                pane: 'pane_Setordecampo_4',
                 opacity: 1,
                 color: 'rgba(255,247,29,1.0)',
                 dashArray: '',
@@ -370,21 +455,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Setordecampo_3');
-        map.getPane('pane_Setordecampo_3').style.zIndex = 403;
-        map.getPane('pane_Setordecampo_3').style['mix-blend-mode'] = 'normal';
-        var layer_Setordecampo_3 = new L.geoJson(json_Setordecampo_3, {
+        map.createPane('pane_Setordecampo_4');
+        map.getPane('pane_Setordecampo_4').style.zIndex = 404;
+        map.getPane('pane_Setordecampo_4').style['mix-blend-mode'] = 'normal';
+        var layer_Setordecampo_4 = new L.geoJson(json_Setordecampo_4, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Setordecampo_3',
-            layerName: 'layer_Setordecampo_3',
-            pane: 'pane_Setordecampo_3',
-            onEachFeature: pop_Setordecampo_3,
-            style: style_Setordecampo_3_0,
+            dataVar: 'json_Setordecampo_4',
+            layerName: 'layer_Setordecampo_4',
+            pane: 'pane_Setordecampo_4',
+            onEachFeature: pop_Setordecampo_4,
+            style: style_Setordecampo_4_0,
         });
-        bounds_group.addLayer(layer_Setordecampo_3);
-        map.addLayer(layer_Setordecampo_3);
-        function pop_Pontosdeapoio_4(feature, layer) {
+        bounds_group.addLayer(layer_Setordecampo_4);
+        map.addLayer(layer_Setordecampo_4);
+        function pop_Pontosdeapoio_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -406,38 +491,38 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Pontosdeapoio_4_0() {
+        function style_Pontosdeapoio_5_0() {
             return {
-                pane: 'pane_Pontosdeapoio_4',
+                pane: 'pane_Pontosdeapoio_5',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Pontosdeapoio_4.svg',
+            iconUrl: 'markers/Pontosdeapoio_5.svg',
             iconSize: [38.0, 38.0]
         }),
                 interactive: false,
             }
         }
-        map.createPane('pane_Pontosdeapoio_4');
-        map.getPane('pane_Pontosdeapoio_4').style.zIndex = 404;
-        map.getPane('pane_Pontosdeapoio_4').style['mix-blend-mode'] = 'normal';
-        var layer_Pontosdeapoio_4 = new L.geoJson(json_Pontosdeapoio_4, {
+        map.createPane('pane_Pontosdeapoio_5');
+        map.getPane('pane_Pontosdeapoio_5').style.zIndex = 405;
+        map.getPane('pane_Pontosdeapoio_5').style['mix-blend-mode'] = 'normal';
+        var layer_Pontosdeapoio_5 = new L.geoJson(json_Pontosdeapoio_5, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Pontosdeapoio_4',
-            layerName: 'layer_Pontosdeapoio_4',
-            pane: 'pane_Pontosdeapoio_4',
-            onEachFeature: pop_Pontosdeapoio_4,
+            dataVar: 'json_Pontosdeapoio_5',
+            layerName: 'layer_Pontosdeapoio_5',
+            pane: 'pane_Pontosdeapoio_5',
+            onEachFeature: pop_Pontosdeapoio_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_Pontosdeapoio_4_0(feature));
+                return L.marker(latlng, style_Pontosdeapoio_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Pontosdeapoio_4);
-        map.addLayer(layer_Pontosdeapoio_4);
+        bounds_group.addLayer(layer_Pontosdeapoio_5);
+        map.addLayer(layer_Pontosdeapoio_5);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -492,9 +577,10 @@
             }
         });
         var overlaysTree = [
-            {label: '<img src="legend/Pontosdeapoio_4.png" /> Pontos de apoio', layer: layer_Pontosdeapoio_4},
-            {label: '<img src="legend/Setordecampo_3.png" /> Setor de campo', layer: layer_Setordecampo_3},
-            {label: '<img src="legend/Comunidade_2.png" /> Comunidade', layer: layer_Comunidade_2},
+            {label: '<img src="legend/Pontosdeapoio_5.png" /> Pontos de apoio', layer: layer_Pontosdeapoio_5},
+            {label: '<img src="legend/Setordecampo_4.png" /> Setor de campo', layer: layer_Setordecampo_4},
+            {label: '<img src="legend/Comunidade_3.png" /> Comunidade', layer: layer_Comunidade_3},
+            {label: '<img src="legend/Edificaes_2.png" /> Edificações', layer: layer_Edificaes_2},
             {label: '<img src="legend/Ruas_1.png" /> Ruas', layer: layer_Ruas_1},
         {label: '<b>Mapa base</b>',  selectAllCheckbox: true, children: [
             {label: "Imagem de satélite", layer: layer_Imagemdesatlite_0},]},]
@@ -523,12 +609,12 @@
               i++;
         });
         var i = 0;
-        layer_Comunidade_2.eachLayer(function(layer) {
+        layer_Comunidade_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((exp_label_Comunidade_2_eval_expression(context) !== null?String('<div style="color: #ff8801; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + exp_label_Comunidade_2_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Comunidade_2'});
+            layer.bindTooltip((exp_label_Comunidade_3_eval_expression(context) !== null?String('<div style="color: #ff8801; font-size: 10pt; font-family: \'Verdana\', sans-serif;">' + exp_label_Comunidade_3_eval_expression(context)).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Comunidade_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -536,40 +622,27 @@
               i++;
         });
         var i = 0;
-        layer_Setordecampo_3.eachLayer(function(layer) {
+        layer_Pontosdeapoio_5.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['setor'] !== null?String('<div style="color: #fff71d; font-size: 14pt; font-weight: bold; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['setor']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Setordecampo_3'});
+            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #d001ff; font-size: 9pt; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['nome']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Pontosdeapoio_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        var i = 0;
-        layer_Pontosdeapoio_4.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #d001ff; font-size: 9pt; font-family: \'Roboto\', sans-serif;">' + layer.feature.properties['nome']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Pontosdeapoio_4'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
+        resetLabels([layer_Ruas_1,layer_Comunidade_3,layer_Pontosdeapoio_5]);
         map.on("zoomend", function(){
-            resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
+            resetLabels([layer_Ruas_1,layer_Comunidade_3,layer_Pontosdeapoio_5]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
+            resetLabels([layer_Ruas_1,layer_Comunidade_3,layer_Pontosdeapoio_5]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Ruas_1,layer_Comunidade_2,layer_Setordecampo_3,layer_Pontosdeapoio_4]);
+            resetLabels([layer_Ruas_1,layer_Comunidade_3,layer_Pontosdeapoio_5]);
         });
         </script>
     </body>
