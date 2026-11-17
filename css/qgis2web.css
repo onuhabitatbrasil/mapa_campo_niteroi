@@ -203,16 +203,16 @@
         }
         .css_Ruas_1 {
             pointer-events: none!important;
-            text-shadow: -1px -1px 0 #fafafa,
-                -1px 0px 0 #fafafa,
-                -1px 1px 0 #fafafa,
-                0px -1px 0 #fafafa,
-                0px 1px 0 #fafafa,
-                1px -1px 0 #fafafa,
-                1px 0px 0 #fafafa,
-                1px 1px 0 #fafafa;
+            text-shadow: -1px -1px 0 #0b0b0b,
+                -1px 0px 0 #0b0b0b,
+                -1px 1px 0 #0b0b0b,
+                0px -1px 0 #0b0b0b,
+                0px 1px 0 #0b0b0b,
+                1px -1px 0 #0b0b0b,
+                1px 0px 0 #0b0b0b,
+                1px 1px 0 #0b0b0b;
         }
-        .css_Comunidade_3 {
+        .css_Comunidade_2 {
             pointer-events: none!important;
             text-shadow: -1px -1px 0 #fafafa,
                 -1px 0px 0 #fafafa,
@@ -223,7 +223,58 @@
                 1px 0px 0 #fafafa,
                 1px 1px 0 #fafafa;
         }
-        .css_Pontosdeapoio_5 {
+        .css_Setordecampo_3 {
+            pointer-events: none!important;
+            text-shadow: -3px -3px 0 #ffed20,
+                -3px -2px 0 #ffed20,
+                -3px -1px 0 #ffed20,
+                -3px 0px 0 #ffed20,
+                -3px 1px 0 #ffed20,
+                -3px 2px 0 #ffed20,
+                -3px 3px 0 #ffed20,
+                -2px -3px 0 #ffed20,
+                -2px -2px 0 #ffed20,
+                -2px -1px 0 #ffed20,
+                -2px 0px 0 #ffed20,
+                -2px 1px 0 #ffed20,
+                -2px 2px 0 #ffed20,
+                -2px 3px 0 #ffed20,
+                -1px -3px 0 #ffed20,
+                -1px -2px 0 #ffed20,
+                -1px -1px 0 #ffed20,
+                -1px 0px 0 #ffed20,
+                -1px 1px 0 #ffed20,
+                -1px 2px 0 #ffed20,
+                -1px 3px 0 #ffed20,
+                0px -3px 0 #ffed20,
+                0px -2px 0 #ffed20,
+                0px -1px 0 #ffed20,
+                0px 1px 0 #ffed20,
+                0px 2px 0 #ffed20,
+                0px 3px 0 #ffed20,
+                1px -3px 0 #ffed20,
+                1px -2px 0 #ffed20,
+                1px -1px 0 #ffed20,
+                1px 0px 0 #ffed20,
+                1px 1px 0 #ffed20,
+                1px 2px 0 #ffed20,
+                1px 3px 0 #ffed20,
+                2px -3px 0 #ffed20,
+                2px -2px 0 #ffed20,
+                2px -1px 0 #ffed20,
+                2px 0px 0 #ffed20,
+                2px 1px 0 #ffed20,
+                2px 2px 0 #ffed20,
+                2px 3px 0 #ffed20,
+                3px -3px 0 #ffed20,
+                3px -2px 0 #ffed20,
+                3px -1px 0 #ffed20,
+                3px 0px 0 #ffed20,
+                3px 1px 0 #ffed20,
+                3px 2px 0 #ffed20,
+                3px 3px 0 #ffed20;
+        }
+        .css_Pontosdeapoio_4 {
             pointer-events: none!important;
             text-shadow: -2px -2px 0 #fafafa,
                 -2px -1px 0 #fafafa,
